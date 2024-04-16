@@ -16,8 +16,10 @@ public class ProductPurchaseMapper {
     public ProductPurchase mapProductPurchaseRequestToProductPurchase(ProductPurchaseRequest productPurchaseRequest){
 
         return ProductPurchase.builder()
-                .purchasePrice(priceCalculator(productPurchaseRequest.getPurchasePrice(),
-                        productPurchaseRequest.getDiscountRate()))
+                .purchasePrice(
+                        priceCalculator(productPurchaseRequest.getPurchasePrice(),
+                                        productPurchaseRequest.getDiscountRate())
+                )
                 .amount(productPurchaseRequest.getAmount())
                 .discountRate(productPurchaseRequest.getDiscountRate())
                 .date(LocalDate.now())

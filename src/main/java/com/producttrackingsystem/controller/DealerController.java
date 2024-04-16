@@ -29,4 +29,12 @@ public class DealerController {
     public ResponseEntity<List<DealerResponse>> getAll(){
         return ResponseEntity.ok(dealerService.getAll());
     }
+
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<DealerResponse> getById(@PathVariable Long id){
+        return ResponseEntity.ok(dealerService.getById(id));
+    }
+
+
+
 }
